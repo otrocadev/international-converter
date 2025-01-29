@@ -3,7 +3,13 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        darkblue: '#021d40',
+        navyblue: '#1d4571',
+        midblue: '#2a537e',
+        slategray: '#92a8be',
+        softgray: '#d9e2e8',
+      },
     },
   },
   plugins: [],

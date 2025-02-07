@@ -1,23 +1,30 @@
 import { useEffect, useState } from 'react'
 
-const decToBin = (number) => {
+const decToBin = (decNumber) => {
+  const newDecNumber = parseInt(decNumber)
+  if (isNaN(newDecNumber)) {
+    return 'Please insert a correct decimal value'
+  }
   let binaryNumber = ''
-  while (number > 0) {
-    if (number % 2 === 0) {
+  while (decNumber > 0) {
+    if (decNumber % 2 === 0) {
       binaryNumber = '0' + binaryNumber
     } else {
       binaryNumber = '1' + binaryNumber
     }
-    number = Math.floor(number / 2)
+    decNumber = Math.floor(decNumber / 2)
   }
   return binaryNumber
 }
 
-const binToDec = (number) => {
-  let currentPower = number.length - 1 // number
+const binToDec = (binNumber) => {
+  let currentPower = binNumber.length - 1 // number
   let decNumber = 0
   while (currentPower >= 0) {
-    if (number[currentPower] === '1') {
+    if (binNumber[currentPower] !== '1' && binNumber[currentPower] !== '0') {
+      return 'Please insert a correct binary value'
+    }
+    if (binNumber[currentPower] === '1') {
       let newDigit = Math.pow(2, currentPower)
       console.log(typeof newDigit)
       decNumber = newDigit + decNumber

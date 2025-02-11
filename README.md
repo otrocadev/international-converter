@@ -1,8 +1,11 @@
-# React + Vite
+# International converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**International converter** aims to be an ***ALL-IN-ONE*** platform to convert things in a page that is very friendly and beautiful for the user. 
 
-Currently, two official plugins are available:
+For the moment this is just an MVP to have the base that I will be expanding during time
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Current implemented functionalities:
+- Conversion from BINARY to DECIMAL in both ways
+
+## Next steps:
+- Add more base systems

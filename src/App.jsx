@@ -24,7 +24,7 @@ function App() {
   return (
     <main className="flex flex-col h-screen">
       <header className="flex items-center justify-center py-8 bg-navyblue text-softgray w-full">
-        <h1 className="text-4xl">Digital Converter</h1>
+        <h1 className="text-4xl">International Converter</h1>
       </header>
       <main className="flex items-center justify-center h-full">
         <div className="flex flex-col justify-center gap-6 p-12 bg-lightgray rounded-md m-4">

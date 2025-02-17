@@ -12,7 +12,7 @@ function Form({
       <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
         <label className="text-midblue">Select a base sytem convertion:</label>
         <select
-          className="text-2xl text-darkblue w-full bg-inherit cursor-pointer"
+          className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
           onChange={selectBaseSystem}
         >
           <option value="decToBin">Decimal to Binnary</option>

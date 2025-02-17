@@ -27,7 +27,7 @@ function App() {
         <h1 className="text-4xl">Digital Converter</h1>
       </header>
       <main className="flex items-center justify-center h-full">
-        <div className="flex flex-col justify-center gap-6 p-12 bg-lightgray rounded-md">
+        <div className="flex flex-col justify-center gap-6 p-12 bg-lightgray rounded-md m-4">
           <Form
             convertNumber={convertNumber}
             selectBaseSystem={selectBaseSystem}

@@ -12,6 +12,7 @@ function Form({
       <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
         <label className="text-midblue">Select a base sytem convertion:</label>
         <select
+          id="baseSelector"
           className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
           onChange={selectBaseSystem}
         >
@@ -22,6 +23,7 @@ function Form({
       <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
         <label className="text-midblue">Amount:</label>
         <input
+          id="inputNumber"
           className="text-2xl text-darkblue w-full bg-inherit"
           onChange={typingChange}
           value={originalNumber}
@@ -30,7 +32,10 @@ function Form({
         ></input>
       </section>
       <section className="flex flex-col items-center w-full">
-        <button className="mt-4 px-4 py-2 bg-navyblue text-softgray rounded-md">
+        <button
+          id="submitBtn"
+          className="mt-4 px-4 py-2 bg-navyblue text-softgray rounded-md"
+        >
           Convert
         </button>
       </section>

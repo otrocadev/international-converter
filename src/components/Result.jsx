@@ -4,7 +4,9 @@ function Result({ convertedNumber }) {
       {convertedNumber ? (
         <section className="flex flex-col items-start w-full">
           <label>Result:</label>
-          <p className="text-4xl">{convertedNumber}</p>
+          <p id="responseNumber" className="text-4xl">
+            {convertedNumber}
+          </p>
         </section>
       ) : null}
     </div>

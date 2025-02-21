@@ -1,3 +1,5 @@
+// Vercel Analytics tools
+import { Analytics } from '@vercel/analytics/react'
 // Hooks
 import useForm from './hooks/useForm'
 import useBaseSystem from './hooks/useBaseSystem'
@@ -38,6 +40,7 @@ function App() {
         </div>
       </main>
       <Footer />
+      <Analytics />
     </main>
   )
 }

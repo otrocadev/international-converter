@@ -14,7 +14,7 @@ function Form({
         <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
           <label className="text-midblue">{selector.label}</label>
           <select
-            id="optionSelector"
+            id={selector.id}
             className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
             onChange={selector.function}
           >

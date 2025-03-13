@@ -8,10 +8,12 @@ export default function BaseConversor({
   selectToBase,
   selectors = [
     {
+      id: 'originalNumberSelector',
       label: 'Convert from:',
       function: selectFromBase,
     },
     {
+      id: 'convertedNumberSelector',
       label: 'To:',
       function: selectToBase,
     },

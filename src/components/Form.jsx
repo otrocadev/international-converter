@@ -1,28 +1,29 @@
 function Form({
   convertNumber,
-  selectOption,
   typingChange,
   originalNumber,
-  optionsLabel = 'Choose an option:',
   options = [{}],
+  selectors = [{}],
 }) {
   return (
     <form
       onSubmit={convertNumber}
       className="flex flex-col justify-center gap-6"
     >
-      <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
-        <label className="text-midblue">{optionsLabel}</label>
-        <select
-          id="optionSelector"
-          className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
-          onChange={selectOption}
-        >
-          {options.map((item) => (
-            <option value={item.value}>{item.text}</option>
-          ))}
-        </select>
-      </section>
+      {selectors.map((selector) => (
+        <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
+          <label className="text-midblue">{selector.label}</label>
+          <select
+            id="optionSelector"
+            className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
+            onChange={selector.function}
+          >
+            {options.map((item) => (
+              <option value={item.value}>{item.text}</option>
+            ))}
+          </select>
+        </section>
+      ))}
       <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
         <label className="text-midblue">Amount:</label>
         <input

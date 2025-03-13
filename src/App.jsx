@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import useForm from './hooks/useForm'
 import useBaseSystem from './hooks/useBaseSystem'
 // Visual components
-import BaseConversor from './sections/BaseConversor'
+import BaseConversorFrom from './sections/BaseConversorForm'
 import Result from './components/Result'
 import Footer from './components/Footer'
 
@@ -17,7 +17,7 @@ function App() {
     setConvertedNumber,
   } = useForm()
 
-  const { selectBaseSystem, convertBaseNumber } = useBaseSystem({
+  const { selectFromBase, selectToBase, convertBaseNumber } = useBaseSystem({
     originalNumber,
     setConvertedNumber,
     resetNumbers,
@@ -30,9 +30,10 @@ function App() {
       </header>
       <main className="flex items-center justify-center h-full">
         <div className="flex flex-col justify-center gap-6 p-12 bg-lightgray rounded-md m-4">
-          <BaseConversor
+          <BaseConversorFrom
             convertBaseNumber={convertBaseNumber}
-            selectBaseSystem={selectBaseSystem}
+            selectFromBase={selectFromBase}
+            selectToBase={selectToBase}
             typingChange={typingChange}
             originalNumber={originalNumber}
           />

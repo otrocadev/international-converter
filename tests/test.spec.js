@@ -6,7 +6,7 @@ const URL = 'http://localhost:5173/'
 test('Initial elements renderization', async ({ page }) => {
   // GO to the website and map the elements needed
   await page.goto(URL)
-  const baseSelector = await page.locator('#baseSelector')
+  const baseSelector = await page.locator('#optionSelector')
   const inputNumber = await page.locator('#inputNumber')
   const submitButton = await page.locator('#submitBtn')
 
@@ -38,7 +38,7 @@ test('Dec to Bin conversion test', async ({ page }) => {
 test('Bin to Dec conversion test', async ({ page }) => {
   // GO to the website and map the elements needed
   await page.goto(URL)
-  const baseSelector = await page.locator('#baseSelector')
+  const baseSelector = await page.locator('#optionSelector')
   const inputNumber = await page.locator('#inputNumber')
 
   // Change base system

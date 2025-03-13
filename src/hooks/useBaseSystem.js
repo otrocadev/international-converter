@@ -16,7 +16,7 @@ export default function useBaseSystem({
   }
 
   // Convertion
-  const convertNumber = (event) => {
+  const convertBaseNumber = (event) => {
     event.preventDefault()
     const number = originalNumber
     if (baseSystem === 'binToDec') {
@@ -29,5 +29,5 @@ export default function useBaseSystem({
     }
   }
 
-  return { selectBaseSystem, convertNumber }
+  return { selectBaseSystem, convertBaseNumber }
 }

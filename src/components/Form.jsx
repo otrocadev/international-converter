@@ -1,8 +1,10 @@
 function Form({
   convertNumber,
-  selectBaseSystem,
+  selectOption,
   typingChange,
   originalNumber,
+  optionsLabel = 'Choose an option:',
+  options = [{}],
 }) {
   return (
     <form
@@ -10,14 +12,15 @@ function Form({
       className="flex flex-col justify-center gap-6"
     >
       <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
-        <label className="text-midblue">Select a base sytem convertion:</label>
+        <label className="text-midblue">{optionsLabel}</label>
         <select
-          id="baseSelector"
+          id="optionSelector"
           className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
-          onChange={selectBaseSystem}
+          onChange={selectOption}
         >
-          <option value="decToBin">Decimal to Binnary</option>
-          <option value="binToDec">Binary to Decimal</option>
+          {options.map((item) => (
+            <option value={item.value}>{item.text}</option>
+          ))}
         </select>
       </section>
       <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">

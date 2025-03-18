@@ -13,17 +13,14 @@ The main goal of this project is to implement the React knowledge adquired. I al
 - ⚛️ React
 - 🔥 Tailwind CSS
 
-## 🖱️ Check out the live demo!
-
-You can see the actual state of the project in this **live demostration** [here](https://internationalconverter.com/).
 
 ## Current implemented functionalities:
 
 - Conversion from BINARY to DECIMAL in both ways
 
-## Next steps:
+## 🖱️ Check out the live demo!
 
-- Add more base systems
+You can see the actual state of the project in this **live demostration** [here](https://internationalconverter.com/).
 
 ## 👨🏻‍💻 Commands available
 
@@ -46,3 +43,7 @@ Start the development server:
     pnpm run dev
 
 🚀 Open your browser and visit http://localhost:4321 to view the project locally!
+
+## 📦 Cooming soon:
+
+- Adding Hexadecimal and Octal base systems

@@ -11,7 +11,9 @@ function App() {
         <h1 className="text-4xl text-center">International Converter</h1>
       </header>
       <main className="flex items-center justify-center h-full">
-        <BaseConversor />
+        <div className="flex flex-col justify-center gap-6 bg-lightgray rounded-md shadow-md">
+          <BaseConversor />
+        </div>
       </main>
       <Footer />
       <Analytics />

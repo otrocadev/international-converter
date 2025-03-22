@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import useForm from '../hooks/useForm'
 import useBaseSystem from '../hooks/useBaseSystem'
-import Card from '../components/Card'
+import SectionWrapper from '../components/SectionWrapper'
 import Form from '../components/Form'
 import Result from '../components/Result'
 
@@ -43,7 +43,7 @@ export default function BaseConversor() {
   )
 
   return (
-    <Card>
+    <SectionWrapper>
       <Form
         convertNumber={convertBaseNumber}
         typingChange={typingChange}
@@ -52,6 +52,6 @@ export default function BaseConversor() {
         options={options}
       />
       <Result convertedNumber={convertedNumber} />
-    </Card>
+    </SectionWrapper>
   )
 }

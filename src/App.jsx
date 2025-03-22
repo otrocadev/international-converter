@@ -1,7 +1,7 @@
 // Vercel Analytics tools
 import { Analytics } from '@vercel/analytics/react'
 // Visual components
-import BaseConversorForm from './sections/BaseConversorForm'
+import BaseConversor from './sections/BaseConversor'
 import Footer from './components/Footer'
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <h1 className="text-4xl text-center">International Converter</h1>
       </header>
       <main className="flex items-center justify-center h-full">
-        <BaseConversorForm />
+        <BaseConversor />
       </main>
       <Footer />
       <Analytics />

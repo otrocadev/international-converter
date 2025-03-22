@@ -1,10 +1,11 @@
+import { useMemo } from 'react'
 import useForm from '../hooks/useForm'
 import useBaseSystem from '../hooks/useBaseSystem'
 import Card from '../components/Card'
 import Form from '../components/Form'
 import Result from '../components/Result'
 
-export default function BaseConversorForm({}) {
+export default function BaseConversor() {
   const {
     originalNumber,
     convertedNumber,
@@ -19,33 +20,27 @@ export default function BaseConversorForm({}) {
     resetNumbers,
   })
 
-  const selectors = [
-    {
-      id: 'originalNumberSelector',
-      label: 'Convert from:',
-      function: selectFromBase,
-    },
-    {
-      id: 'convertedNumberSelector',
-      label: 'To:',
-      function: selectToBase,
-    },
-  ]
+  // Evitem recrear els arrays a cada render
+  const selectors = useMemo(
+    () => [
+      {
+        id: 'originalNumberSelector',
+        label: 'Convert from:',
+        function: selectFromBase,
+      },
+      { id: 'convertedNumberSelector', label: 'To:', function: selectToBase },
+    ],
+    [selectFromBase, selectToBase]
+  )
 
-  const options = [
-    {
-      value: '',
-      text: 'Select a base system',
-    },
-    {
-      value: 'dec',
-      text: 'Decimal',
-    },
-    {
-      value: 'bin',
-      text: 'Binary',
-    },
-  ]
+  const options = useMemo(
+    () => [
+      { value: '', text: 'Select a base system' },
+      { value: 'dec', text: 'Decimal' },
+      { value: 'bin', text: 'Binary' },
+    ],
+    []
+  )
 
   return (
     <Card>

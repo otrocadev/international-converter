@@ -1,12 +1,25 @@
+import useForm from '../hooks/useForm'
+import useBaseSystem from '../hooks/useBaseSystem'
+import Card from '../components/Card'
 import Form from '../components/Form'
+import Result from '../components/Result'
 
-export default function BaseConversor({
-  convertBaseNumber,
-  typingChange,
-  originalNumber,
-  selectFromBase,
-  selectToBase,
-  selectors = [
+export default function BaseConversorForm({}) {
+  const {
+    originalNumber,
+    convertedNumber,
+    resetNumbers,
+    typingChange,
+    setConvertedNumber,
+  } = useForm()
+
+  const { selectFromBase, selectToBase, convertBaseNumber } = useBaseSystem({
+    originalNumber,
+    setConvertedNumber,
+    resetNumbers,
+  })
+
+  const selectors = [
     {
       id: 'originalNumberSelector',
       label: 'Convert from:',
@@ -17,8 +30,9 @@ export default function BaseConversor({
       label: 'To:',
       function: selectToBase,
     },
-  ],
-  options = [
+  ]
+
+  const options = [
     {
       value: '',
       text: 'Select a base system',
@@ -31,15 +45,18 @@ export default function BaseConversor({
       value: 'bin',
       text: 'Binary',
     },
-  ],
-}) {
+  ]
+
   return (
-    <Form
-      convertNumber={convertBaseNumber}
-      typingChange={typingChange}
-      originalNumber={originalNumber}
-      selectors={selectors}
-      options={options}
-    />
+    <Card>
+      <Form
+        convertNumber={convertBaseNumber}
+        typingChange={typingChange}
+        originalNumber={originalNumber}
+        selectors={selectors}
+        options={options}
+      />
+      <Result convertedNumber={convertedNumber} />
+    </Card>
   )
 }

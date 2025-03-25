@@ -17,18 +17,22 @@ export function decToBin(decNumber) {
 }
 
 export function binToDec(binNumber) {
-  let currentPower = binNumber.length - 1 // number
+  let currentPower = 0
   let decNumber = 0
-  while (currentPower >= 0) {
-    if (binNumber[currentPower] !== '1' && binNumber[currentPower] !== '0') {
+  let index = binNumber.length - 1
+
+  while (index >= 0) {
+    if (binNumber[index] !== '1' && binNumber[index] !== '0') {
       alert('Please insert a correct binary value')
       return null
     }
-    if (binNumber[currentPower] === '1') {
+    if (binNumber[index] === '1') {
       let newDigit = Math.pow(2, currentPower)
-      decNumber = newDigit + decNumber
+      decNumber += newDigit
     }
-    currentPower--
+    index--
+    currentPower++
   }
+
   return decNumber
 }

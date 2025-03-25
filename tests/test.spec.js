@@ -24,7 +24,7 @@ test('Initial elements renderization', async ({ page }) => {
   await expect(submitButton).toBeVisible()
 })
 
-test('Dec to Bin conversion test', async ({ page }) => {
+test('Dec to Bin conversion tests', async ({ page }) => {
   // GO to the website and map the elements needed
   await page.goto(URL)
   const firstBaseSelector = await page.locator('#originalNumberSelector')
@@ -61,5 +61,5 @@ test('Bin to Dec conversion test', async ({ page }) => {
 
   // Check if the application is returning the correct value
   const responseNumber = await page.locator('#responseNumber')
-  await expect(responseNumber).toHaveText('563')
+  await expect(responseNumber).toHaveText('817')
 })

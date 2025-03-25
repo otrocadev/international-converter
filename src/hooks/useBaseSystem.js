@@ -27,7 +27,6 @@ export default function useBaseSystem({
     const newBaseSystem =
       baseFrom + 'To' + baseTo.slice(0, 1).toUpperCase() + baseTo.slice(1)
     setBaseSystem(newBaseSystem)
-    console.log(newBaseSystem)
   }, [baseFrom, baseTo])
 
   // Convertion

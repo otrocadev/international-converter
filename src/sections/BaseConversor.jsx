@@ -14,11 +14,12 @@ export default function BaseConversor() {
     setConvertedNumber,
   } = useForm()
 
-  const { selectFromBase, selectToBase, convertBaseNumber } = useBaseSystem({
-    originalNumber,
-    setConvertedNumber,
-    resetNumbers,
-  })
+  const { selectFromBase, selectToBase, currentError, convertBaseNumber } =
+    useBaseSystem({
+      originalNumber,
+      setConvertedNumber,
+      resetNumbers,
+    })
 
   // Evitem recrear els arrays a cada render
   const selectors = useMemo(
@@ -26,9 +27,15 @@ export default function BaseConversor() {
       {
         id: 'originalNumberSelector',
         label: 'Convert from:',
+        errorStatus: false,
         function: selectFromBase,
       },
-      { id: 'convertedNumberSelector', label: 'To:', function: selectToBase },
+      {
+        id: 'convertedNumberSelector',
+        label: 'To:',
+        errorStatus: false,
+        function: selectToBase,
+      },
     ],
     [selectFromBase, selectToBase]
   )
@@ -50,6 +57,7 @@ export default function BaseConversor() {
         originalNumber={originalNumber}
         selectors={selectors}
         options={options}
+        currentError={currentError}
       />
       <Result convertedNumber={convertedNumber} />
     </SectionWrapper>

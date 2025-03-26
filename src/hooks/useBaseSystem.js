@@ -13,7 +13,7 @@ export default function useBaseSystem({
 
   const checkErrors = () => {
     if (baseFrom === baseTo)
-      setCurrentError('The system bases must be different')
+      setCurrentError('The base systems must be different')
     if (baseFrom !== baseTo) setCurrentError('')
   }
 

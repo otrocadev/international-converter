@@ -4,6 +4,7 @@ function Form({
   originalNumber,
   options = [{}],
   selectors = [{}],
+  currentError,
 }) {
   return (
     <form
@@ -13,7 +14,11 @@ function Form({
       {
         // SELECTOR
         selectors.map((selector) => (
-          <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
+          <section
+            className={`flex flex-col items-start w-full border-2 rounded-md px-4 pb-2 + ${
+              selector.errorStatus ? 'border-red-600' : ''
+            }`}
+          >
             <label className="text-midblue">{selector.label}</label>
             <select
               id={selector.id}
@@ -30,7 +35,7 @@ function Form({
       {
         // INPUT NUMBER
       }
-      <section className="flex flex-col items-start w-full border-2 border-slategray rounded-md px-4 pb-2">
+      <section className="flex flex-col items-start w-full border-2 rounded-md px-4 pb-2">
         <label className="text-midblue">Amount:</label>
         <input
           id="inputNumber"
@@ -41,6 +46,9 @@ function Form({
           placeholder="Enter a number..."
         ></input>
       </section>
+      {currentError && (
+        <p className="text-sm text-red-600 m-auto">{currentError}</p>
+      )}
       <section className="flex flex-col items-center w-full">
         <button
           id="submitBtn"

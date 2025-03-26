@@ -7,8 +7,15 @@ export default function useBaseSystem({
   resetNumbers,
 }) {
   const [baseSystem, setBaseSystem] = useState('')
-  const [baseFrom, setBaseFrom] = useState('dec')
-  const [baseTo, setBaseTo] = useState('bin')
+  const [baseFrom, setBaseFrom] = useState('')
+  const [baseTo, setBaseTo] = useState(' ')
+  const [currentError, setCurrentError] = useState('')
+
+  const checkErrors = () => {
+    if (baseFrom === baseTo)
+      setCurrentError('The system bases must be different')
+    if (baseFrom !== baseTo) setCurrentError('')
+  }
 
   const selectFromBase = (event) => {
     const newBaseFrom = event.target.value
@@ -27,6 +34,7 @@ export default function useBaseSystem({
     const newBaseSystem =
       baseFrom + 'To' + baseTo.slice(0, 1).toUpperCase() + baseTo.slice(1)
     setBaseSystem(newBaseSystem)
+    checkErrors()
   }, [baseFrom, baseTo])
 
   // Convertion
@@ -49,5 +57,5 @@ export default function useBaseSystem({
     }
   }
 
-  return { selectFromBase, selectToBase, convertBaseNumber }
+  return { selectFromBase, selectToBase, currentError, convertBaseNumber }
 }

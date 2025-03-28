@@ -39,7 +39,7 @@ function Form({
         <label className="text-midblue">Amount:</label>
         <input
           id="inputNumber"
-          className="text-2xl text-darkblue w-full bg-inherit"
+          className="text-2xl text-darkblue w-full bg-inherit font-exodos"
           onChange={typingChange}
           value={originalNumber}
           maxLength="20"

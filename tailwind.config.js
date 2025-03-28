@@ -11,6 +11,9 @@ export default {
         softgray: '#d9e2e8',
         lightgray: '#f0f4f8',
       },
+      fontFamily: {
+        exodos: '"Exo 2 Variable", sans-serif;',
+      },
     },
   },
   plugins: [],

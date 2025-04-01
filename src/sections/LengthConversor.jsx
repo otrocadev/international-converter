@@ -1,11 +1,13 @@
 import { useMemo } from 'react'
 import useForm from '../hooks/useForm'
-import useBaseSystem from '../hooks/useBaseSystem'
+import useLength from '../hooks/useLength'
 import SectionWrapper from '../components/SectionWrapper'
 import Form from '../components/Form'
 import Result from '../components/Result'
 
-export default function BaseConversor() {
+import { lengthOptions } from '../utils/lengthConversions'
+
+export default function LengthConversor() {
   const {
     originalNumber,
     convertedNumber,
@@ -14,12 +16,17 @@ export default function BaseConversor() {
     setConvertedNumber,
   } = useForm()
 
-  const { selectFromBase, selectToBase, currentError, convertBaseNumber } =
-    useBaseSystem({
-      originalNumber,
-      setConvertedNumber,
-      resetNumbers,
-    })
+  const {
+    selectUnitFrom,
+    unitTo,
+    selectUnitTo,
+    currentError,
+    convertLengthUnit,
+  } = useLength({
+    originalNumber,
+    setConvertedNumber,
+    resetNumbers,
+  })
 
   const selectors = useMemo(
     () => [
@@ -27,38 +34,31 @@ export default function BaseConversor() {
         id: 'originalNumberSelector',
         label: 'Convert from:',
         errorStatus: false,
-        function: selectFromBase,
+        function: selectUnitFrom,
       },
       {
         id: 'convertedNumberSelector',
         label: 'To:',
         errorStatus: false,
-        function: selectToBase,
+        function: selectUnitTo,
       },
     ],
-    [selectFromBase, selectToBase]
+    [selectUnitFrom, selectUnitTo]
   )
 
-  const options = useMemo(
-    () => [
-      { value: '', text: 'Select a base system' },
-      { value: 'dec', text: 'Decimal' },
-      { value: 'bin', text: 'Binary' },
-    ],
-    []
-  )
+  const options = useMemo(() => lengthOptions, [])
 
   return (
     <SectionWrapper>
       <Form
-        convertNumber={convertBaseNumber}
+        convertNumber={convertLengthUnit}
         typingChange={typingChange}
         originalNumber={originalNumber}
         selectors={selectors}
         options={options}
         currentError={currentError}
       />
-      <Result convertedNumber={convertedNumber} />
+      <Result convertedNumber={convertedNumber} unit={unitTo} />
     </SectionWrapper>
   )
 }

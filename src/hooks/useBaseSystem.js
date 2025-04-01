@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { binToDec, decToBin } from '../utils/baseSystemConvertions.js'
+import { binToDec, decToBin } from '../utils/baseSystemConversions.js'
 
 export default function useBaseSystem({
   originalNumber,
@@ -37,7 +37,7 @@ export default function useBaseSystem({
     checkErrors()
   }, [baseFrom, baseTo])
 
-  // Convertion
+  // Conversion
   const convertBaseNumber = (event) => {
     event.preventDefault()
     const number = originalNumber

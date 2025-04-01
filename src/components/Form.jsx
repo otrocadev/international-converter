@@ -15,6 +15,7 @@ function Form({
         // SELECTOR
         selectors.map((selector) => (
           <section
+            key={selector.id}
             className={`flex flex-col items-start w-full border-2 rounded-md px-4 pb-2 + ${
               selector.errorStatus ? 'border-red-600' : ''
             }`}
@@ -26,7 +27,9 @@ function Form({
               onChange={selector.function}
             >
               {options.map((item) => (
-                <option value={item.value}>{item.text}</option>
+                <option key={item.value} value={item.value}>
+                  {item.text}
+                </option>
               ))}
             </select>
           </section>

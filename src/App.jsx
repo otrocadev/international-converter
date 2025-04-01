@@ -2,6 +2,7 @@
 import { Analytics } from '@vercel/analytics/react'
 // Visual components
 import BaseConversor from './sections/BaseConversor'
+import LengthConversor from './sections/LengthConversor'
 import ConversionTypesMenu from './components/ConversionTypesMenu'
 import Footer from './components/Footer'
 // hooks
@@ -24,10 +25,8 @@ function App() {
             convertionType={convertionType}
             changeConvertionType={changeConvertionType}
           />
-          {convertionType == menuOptions[0].id && <BaseConversor />}
-          {convertionType == menuOptions[1].id && (
-            <p>Here goes the lenght form</p>
-          )}
+          {convertionType == menuOptions[0].id && <LengthConversor />}
+          {convertionType == menuOptions[1].id && <BaseConversor />}
         </div>
       </main>
       <Footer />

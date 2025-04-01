@@ -1,10 +1,10 @@
 export const menuOptions = [
   {
-    id: 'base',
-    name: 'Base',
+    id: 'length',
+    name: 'Length',
   },
   {
-    id: 'lenght',
-    name: 'Length',
+    id: 'base',
+    name: 'Base',
   },
 ]

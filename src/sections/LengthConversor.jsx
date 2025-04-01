@@ -5,7 +5,7 @@ import SectionWrapper from '../components/SectionWrapper'
 import Form from '../components/Form'
 import Result from '../components/Result'
 
-import { lengthOptions } from '../utils/lengthConvertions'
+import { lengthOptions } from '../utils/lengthConversions'
 
 export default function LengthConversor() {
   const {

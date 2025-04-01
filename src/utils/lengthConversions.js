@@ -7,7 +7,7 @@ export const lengthOptions = [
   { value: 'mm', text: 'Milimeters (mm)' },
 ]
 
-// Possible convertions
+// Possible conversions
 const equivalences = {
   km: 1000,
   m: 1,

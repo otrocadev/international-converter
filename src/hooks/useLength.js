@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { convertNumber } from '../utils/lengthConvertions'
+import { convertNumber } from '../utils/lengthConversions'
 
 export default function useBaseSystem({
   originalNumber,
@@ -36,7 +36,7 @@ export default function useBaseSystem({
     checkErrors()
   }, [unitFrom, unitTo])
 
-  // Convertion
+  // Conversion
   const convertLengthUnit = (event) => {
     event.preventDefault()
 

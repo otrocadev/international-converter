@@ -5,6 +5,8 @@ import SectionWrapper from '../components/SectionWrapper'
 import Form from '../components/Form'
 import Result from '../components/Result'
 
+import { lengthOptions } from '../utils/lengthConvertions'
+
 export default function LengthConversor() {
   const {
     originalNumber,
@@ -14,12 +16,17 @@ export default function LengthConversor() {
     setConvertedNumber,
   } = useForm()
 
-  const { selectUnitFrom, selectUnitTo, currentError, convertLengthUnit } =
-    useLength({
-      originalNumber,
-      setConvertedNumber,
-      resetNumbers,
-    })
+  const {
+    selectUnitFrom,
+    unitTo,
+    selectUnitTo,
+    currentError,
+    convertLengthUnit,
+  } = useLength({
+    originalNumber,
+    setConvertedNumber,
+    resetNumbers,
+  })
 
   const selectors = useMemo(
     () => [
@@ -39,14 +46,7 @@ export default function LengthConversor() {
     [selectUnitFrom, selectUnitTo]
   )
 
-  const options = useMemo(
-    () => [
-      { value: '', text: 'Select a length unit' },
-      { value: 'm', text: 'Meters (m)' },
-      { value: 'cm', text: 'Centimeters (cm)' },
-    ],
-    []
-  )
+  const options = useMemo(() => lengthOptions, [])
 
   return (
     <SectionWrapper>
@@ -58,7 +58,7 @@ export default function LengthConversor() {
         options={options}
         currentError={currentError}
       />
-      <Result convertedNumber={convertedNumber} unit="cm" />
+      <Result convertedNumber={convertedNumber} unit={unitTo} />
     </SectionWrapper>
   )
 }

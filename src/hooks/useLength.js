@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { MtoCM, CMtoM } from '../utils/lengthConvertions'
+import { convertNumber } from '../utils/lengthConvertions'
 
 export default function useBaseSystem({
   originalNumber,
@@ -31,7 +31,7 @@ export default function useBaseSystem({
 
   // Unit conversion selector
   useEffect(() => {
-    const newUnitConversion = unitFrom + 'TO' + unitTo
+    const newUnitConversion = `${unitFrom}TO${unitTo}`
     setUnitConversion(newUnitConversion)
     checkErrors()
   }, [unitFrom, unitTo])
@@ -39,18 +39,17 @@ export default function useBaseSystem({
   // Convertion
   const convertLengthUnit = (event) => {
     event.preventDefault()
-    const number = originalNumber
-    if (unitConversion === 'mTOcm') {
-      const newNumber = MtoCM(number)
-      setConvertedNumber(newNumber)
-      return
-    }
-    if (unitConversion === 'cmTOm') {
-      const newNumber = CMtoM(number)
-      setConvertedNumber(newNumber)
-      return
-    }
+
+    const newNumber = convertNumber(originalNumber, unitFrom, unitTo)
+    setConvertedNumber(newNumber)
+    return
   }
 
-  return { selectUnitFrom, selectUnitTo, currentError, convertLengthUnit }
+  return {
+    selectUnitFrom,
+    unitTo,
+    selectUnitTo,
+    currentError,
+    convertLengthUnit,
+  }
 }

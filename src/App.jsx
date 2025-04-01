@@ -5,12 +5,12 @@ import BaseConversor from './sections/BaseConversor'
 import ConversionTypesMenu from './components/ConversionTypesMenu'
 import Footer from './components/Footer'
 // hooks
-import useConverstionTypesMenu from './hooks/useConverstionTypesmenu'
+import useConvertionTypesMenu from './hooks/useConvertionTypesMenu'
 // data
 import { menuOptions } from './data/menuOptions'
 
 function App() {
-  const { convertionType, changeConvertionType } = useConverstionTypesMenu()
+  const { convertionType, changeConvertionType } = useConvertionTypesMenu()
 
   return (
     <main className="flex flex-col h-screen">

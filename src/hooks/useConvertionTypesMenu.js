@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function useConverstionTypesMenu() {
+export default function useConvertionTypesMenu() {
   const [convertionType, setConvertionType] = useState('base')
 
   const changeConvertionType = (convertionType) => {

@@ -1,24 +1,15 @@
 // Vercel Analytics tools
 import { Analytics } from '@vercel/analytics/react'
-
-import useConverstionTypesMenu from './hooks/useConverstionTypesmenu'
 // Visual components
 import BaseConversor from './sections/BaseConversor'
 import ConversionTypesMenu from './components/ConversionTypesMenu'
 import Footer from './components/Footer'
+// hooks
+import useConverstionTypesMenu from './hooks/useConverstionTypesmenu'
+// data
+import { menuOptions } from './data/menuOptions'
 
 function App() {
-  const menuOptions = [
-    {
-      id: 'base',
-      name: 'Base',
-    },
-    {
-      id: 'lenght',
-      name: 'Length',
-    },
-  ]
-
   const { convertionType, changeConvertionType } = useConverstionTypesMenu()
 
   return (

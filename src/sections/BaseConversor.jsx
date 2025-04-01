@@ -21,7 +21,6 @@ export default function BaseConversor() {
       resetNumbers,
     })
 
-  // Evitem recrear els arrays a cada render
   const selectors = useMemo(
     () => [
       {

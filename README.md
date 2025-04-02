@@ -16,7 +16,7 @@ The main goal of this project is to implement the React knowledge acquired. I al
 ## Current implemented functionalities:
 
 - ✅ Conversion from BINARY to DECIMAL in both ways.
-- ✅ Conversion of length units between the most used ones on the [IT](https://www.iso.org/home.html/).
+- ✅ Conversion of length units between the most used ones on the [International System](https://en.wikipedia.org/wiki/International_System_of_Units) & [Imperial Unit System](https://en.wikipedia.org/wiki/Imperial_units)
 
 ## 🖱️ Check out the live demo!
 

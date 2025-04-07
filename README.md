@@ -36,11 +36,11 @@ Navigate to the project directory:
 
 Install dependencies:
 
-    pnpm install
+    npm install
 
 Start the development server:
 
-    pnpm run dev
+    npm run dev
 
 🚀 Open your browser and visit http://localhost:4321 to view the project locally!
 

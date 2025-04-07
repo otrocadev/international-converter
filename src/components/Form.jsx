@@ -55,7 +55,7 @@ function Form({
       <section className="flex flex-col items-center w-full">
         <button
           id="submitBtn"
-          className="mt-4 px-4 py-2 bg-navyblue text-softgray rounded-md"
+          className="mt-4 px-4 py-2 bg-navyblue text-softgray rounded-md transition-all hover:shadow-xl hover:-translate-y-1"
         >
           Convert
         </button>

@@ -19,7 +19,7 @@ function App() {
         <h1 className="text-4xl text-center">International Converter</h1>
       </header>
       <main className="flex items-center justify-center h-full">
-        <div className="flex flex-col justify-center bg-lightgray rounded-md shadow-md overflow-hidden">
+        <div className="flex flex-col justify-center bg-lightgray rounded-md shadow-md overflow-hidden m-4">
           <ConversionTypesMenu
             menu={menuOptions}
             conversionType={conversionType}

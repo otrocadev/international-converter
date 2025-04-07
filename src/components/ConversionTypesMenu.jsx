@@ -11,10 +11,8 @@ function ConversionTypesMenu({
           id={item.id}
           onClick={() => changeConversionType(item.id)}
           className={`
-            px-4 py-2 transition-all + ${
-              item.id == conversionType
-                ? 'rounded-lg bg-midblue text-softgray'
-                : ''
+            px-4 py-2 rounded-lg transition-all hover:shadow-xl hover:-translate-y-1 hover:bg-midblue hover:text-softgray + ${
+              item.id == conversionType ? 'bg-midblue text-softgray' : ''
             }
           `}
         >

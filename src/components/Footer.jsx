@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex items-center justify-center py-4 bg-navyblue text-softgray w-full gap-24">
+    <footer className="flex flex-col sm:flex-row gap-4 sm:gap-24 items-center justify-center py-4 bg-navyblue text-softgray w-full">
       <div className="flex gap-4">
         <a
           className="text-xl hover:scale-105 transition-all 500ms"

@@ -11,30 +11,44 @@ function Form({
       onSubmit={convertNumber}
       className="flex flex-col justify-center gap-6"
     >
-      {
-        // SELECTOR
-        selectors.map((selector) => (
-          <section
-            key={selector.id}
-            className={`flex flex-col items-start w-full border-2 rounded-md px-4 pb-2 + ${
-              selector.errorStatus ? 'border-red-600' : ''
-            }`}
-          >
-            <label className="text-midblue">{selector.label}</label>
-            <select
-              id={selector.id}
-              className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
-              onChange={selector.function}
-            >
-              {options.map((item) => (
-                <option key={item.value} value={item.value}>
-                  {item.text}
-                </option>
-              ))}
-            </select>
-          </section>
-        ))
-      }
+      <section
+        key={selectors[0].id}
+        className={`flex flex-col items-start w-full border-2 rounded-md px-4 pb-2 + ${
+          selectors[0].errorStatus ? 'border-red-600' : ''
+        }`}
+      >
+        <label className="text-midblue">{selectors[0].label}</label>
+        <select
+          id={selectors[0].id}
+          className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
+          onChange={selectors[0].function}
+        >
+          {options.map((item) => (
+            <option key={item.value} value={item.value}>
+              {item.text}
+            </option>
+          ))}
+        </select>
+      </section>
+      <section
+        key={selectors[0].id}
+        className={`flex flex-col items-start w-full border-2 rounded-md px-4 pb-2 + ${
+          selectors[1].errorStatus ? 'border-red-600' : ''
+        }`}
+      >
+        <label className="text-midblue">{selectors[1].label}</label>
+        <select
+          id={selectors[1].id}
+          className="sm:text-2xl text-darkblue w-full bg-inherit cursor-pointer"
+          onChange={selectors[1].function}
+        >
+          {options.map((item) => (
+            <option key={item.value} value={item.value}>
+              {item.text}
+            </option>
+          ))}
+        </select>
+      </section>
       {
         // INPUT NUMBER
       }

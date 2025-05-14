@@ -14,7 +14,7 @@ function Form({
       <div className="flex gap-6 flex-wrap justify-center">
         <section
           key={selectors[0].id}
-          className={`flex flex-col items-start w-80 border-2 rounded-md px-4 pb-2 + ${
+          className={`flex flex-col items-start w-80 border-2 rounded-md px-4 pb-2 hover:bg-softgray + ${
             selectors[0].errorStatus ? 'border-red-600' : ''
           }`}
         >
@@ -33,7 +33,7 @@ function Form({
         </section>
         <section
           key={selectors[0].id}
-          className={`flex flex-col items-start w-80 border-2 rounded-md px-4 pb-2 + ${
+          className={`flex flex-col items-start w-80 border-2 rounded-md px-4 pb-2 hover:bg-softgray + ${
             selectors[1].errorStatus ? 'border-red-600' : ''
           }`}
         >
@@ -55,11 +55,11 @@ function Form({
         {
           // INPUT NUMBER
         }
-        <section className="flex flex-col items-start w-80 sm:w-full rounded-md px-4 pb-2">
+        <section className="flex flex-col items-start w-80 max-w-[42rem] sm:w-full rounded-md px-4 pb-2">
           <label className="text-midblue">Amount:</label>
           <input
             id="inputNumber"
-            className="text-2xl text-darkblue w-full bg-inherit border-2 p-2 font-exodos"
+            className="text-2xl text-darkblue w-full bg-inherit hover:bg-softgray border-2 p-2 font-exodos"
             onChange={typingChange}
             value={originalNumber}
             maxLength="20"

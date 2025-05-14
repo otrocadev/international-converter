@@ -13,7 +13,7 @@ export function decToBin(decNumber) {
     }
     decNumber = Math.floor(decNumber / 2)
   }
-  return binaryNumber
+  return parseInt(binaryNumber)
 }
 
 export function binToDec(binNumber) {

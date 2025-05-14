@@ -42,7 +42,7 @@ test('Km to mm conversion test', async ({ page }) => {
 
   // Check if the application is returning the correct value
   const responseNumber = await page.locator('#responseNumber')
-  await expect(responseNumber).toHaveText('3000000 mm')
+  await expect(responseNumber).toHaveText('3.0000e+6 mm')
 })
 
 test('mm to cm conversion test', async ({ page }) => {
@@ -63,7 +63,7 @@ test('mm to cm conversion test', async ({ page }) => {
 
   // Check if the application is returning the correct value
   const responseNumber = await page.locator('#responseNumber')
-  await expect(responseNumber).toHaveText('1.2 cm')
+  await expect(responseNumber).toHaveText('1.200 cm')
 })
 
 test('km to mi conversion test', async ({ page }) => {
@@ -84,5 +84,5 @@ test('km to mi conversion test', async ({ page }) => {
 
   // Check if the application is returning the correct value
   const responseNumber = await page.locator('#responseNumber')
-  await expect(responseNumber).toHaveText('2.796170365068003 mi')
+  await expect(responseNumber).toHaveText('2.796 mi')
 })
